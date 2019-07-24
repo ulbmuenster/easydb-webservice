@@ -7,6 +7,6 @@ class API(Resource):
 
     @fresh_jwt_required
     def post(self):
-        # TODO Make the generation of the ID type dependent tttt
+        # TODO Make the generation of the ID type dependent
         id_gen = IDGenerator()
         return id_gen.generate()
