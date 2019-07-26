@@ -1,9 +1,10 @@
-from flask_jwt_extended import fresh_jwt_required
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy()
 
 
-class DataBaseConnector:
+class Inventarnummer(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
 
-    @fresh_jwt_required
-    def __init__(self):
-        # Connection Logic mit SQLAlchemy hier
-        pass
+    def __repr__(self):
+        return "<Inventarnummer (id='%d')>" % self.id

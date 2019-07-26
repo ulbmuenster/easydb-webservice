@@ -25,3 +25,5 @@ Werkzeug
 WTForms
 pyjwt
 Requests
+psycopg2
+pi
