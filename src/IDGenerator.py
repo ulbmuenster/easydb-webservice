@@ -1,5 +1,5 @@
 from flask_jwt_extended import fresh_jwt_required
-from .DatabaseConnector import db, Inventarnummer
+from .InventarnummerModel import db, Inventarnummer
 from flask_restful import Resource
 from flask import Response, jsonify
 import json

@@ -1,5 +1,5 @@
 from src import TokenVerifier, TokenGenerator, IDGenerator
-from flask import Flask, jsonify, current_app
+from flask import Flask, jsonify
 from flask_restful import Resource, Api
 from flask_jwt_extended import JWTManager
 
@@ -15,7 +15,7 @@ def create_app():
     # app.config.from_envvar('APP_CONFIG_FILE')
     app.config.from_object("cfg.development")
     # SQLAlchemy
-    from src.DatabaseConnector import db
+    from src.InventarnummerModel import db
     db.init_app(app)
     with app.app_context():
         db.create_all()
