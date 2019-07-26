@@ -6,7 +6,7 @@ from flask_jwt_extended import JWTManager
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
-    # Load the configuration from the instance folder
+    # Load the configuration from the config folder
     app.config.from_object("cfg.default")
     # Load the configuration from the instance folder
     app.config.from_pyfile('config.py')
