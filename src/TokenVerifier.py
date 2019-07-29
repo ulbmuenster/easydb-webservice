@@ -10,5 +10,5 @@ class TokenVerifier(Resource):
     # for the function to be executed.
     @fresh_jwt_required
     def post(self):
-        message = json.dumps({'status': 200, 'msg': "The access token is valid."})
-        return Response(message, status=200, mimetype='application/json')
+        message = json.dumps({'msg': "The access token is valid."})
+        return Response(message, status=403, mimetype='application/json')

@@ -32,7 +32,7 @@ def create_app():
         token_type = token['type']
         return jsonify({
             'status': 401,
-            'msg': 'The {} token is invalid, expired or not fresh.'.format(token_type)
+            'error': 'The {} token is invalid, expired or not fresh.'.format(token_type)
         }), 401
     # Route configuration
     # Tells flask_restful which script/class belongs to which request/URL
