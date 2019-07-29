@@ -4,7 +4,7 @@ easydb_context = {'data': {'invnr': ''}}  # json mock
 easydb_info = ''
 
 
-# Pseudo-Code
+# Test-Funktion
 def pre_update_function(easydb_context, easydb_info):
     data = easydb_context['data']
     url = "http://localhost:5000/generate"
@@ -18,7 +18,6 @@ def pre_update_function(easydb_context, easydb_info):
         return data
     else:
         print (json_data)
-        return json_data
 
 
 pre_update_function(easydb_context=easydb_context, easydb_info=easydb_info)
