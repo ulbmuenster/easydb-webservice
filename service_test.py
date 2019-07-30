@@ -8,7 +8,7 @@ easydb_info = ''
 def pre_update_function(easydb_context, easydb_info):
     data = easydb_context['data']
     url = "http://localhost:5000/generate"
-    jsonwebtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0NzU3ODMsIm5iZiI6MTU2NDQ3NTc4MywianRpIjoiMmE4OWQ1ODUtNWEwOC00YzJhLWFkNTgtMDVkODA0YTkzNGMxIiwiZXhwIjoxNTY0NDc2NjgzLCJpZGVudGl0eSI6ImVhc3lkYjUiLCJmcmVzaCI6dHJ1ZSwidHlwZSI6ImFjY2VzcyJ9.Kj5nDuenCU5VKDrnlEOVzFe0E55jPJdHQbb9bPE5dmI"
+    jsonwebtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0NzY3NzUsIm5iZiI6MTU2NDQ3Njc3NSwianRpIjoiZmJlODYyOWItNzI3Ni00MjE2LWIwYzQtNzBhZDZkYWMzN2Y5IiwiZXhwIjoxNTY0NDc3Njc1LCJpZGVudGl0eSI6ImVhc3lkYjUiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.KmNMtdQg3W3LpVzJDnsGxgg44qwv1GVSb-LvOjl8pV8"
     try:
         result = requests.get(url = url, headers={'Authorization': 'Bearer '+jsonwebtoken})
         json_data = result.json()

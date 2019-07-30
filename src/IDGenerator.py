@@ -1,4 +1,4 @@
-from flask_jwt_extended import fresh_jwt_required
+from flask_jwt_extended import jwt_required
 from .InventarnummerModel import db, Inventarnummer
 from flask_restful import Resource
 from flask import Response, jsonify
@@ -7,7 +7,7 @@ import json
 
 class IDGenerator(Resource):
 
-    @fresh_jwt_required
+    @jwt_required
     def get(self):
         try:
             id = Inventarnummer.query.order_by(Inventarnummer.id.desc()).limit(1).first()
