@@ -1,4 +1,4 @@
-from src import TokenVerifier, TokenGenerator, IDGenerator
+from src import TokenGenerator, IDGenerator
 from flask import Flask, jsonify
 from flask_restful import Resource, Api
 from flask_jwt_extended import JWTManager
@@ -35,7 +35,6 @@ def create_app():
         }), 401
     # Route configuration
     # Tells flask_restful which script/class belongs to which request/URL
-    api.add_resource(TokenVerifier.TokenVerifier, "/TokenVerifier")
     api.add_resource(TokenGenerator.TokenGenerator, "/TokenGenerator")
     api.add_resource(IDGenerator.IDGenerator, "/generate")
 

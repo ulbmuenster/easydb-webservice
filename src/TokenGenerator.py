@@ -1,5 +1,5 @@
 from flask_restful import Resource
-from flask_jwt_extended import create_access_token, fresh_jwt_required
+from flask_jwt_extended import create_access_token
 
 
 class TokenGenerator(Resource):
