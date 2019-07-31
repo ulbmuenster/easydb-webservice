@@ -30,7 +30,6 @@ def create_app():
     def token_invalid(token):
         token_type = token['type']
         return jsonify({
-            'status': 401,
             'error': 'The {} token is invalid or expired.'.format(token_type)
         }), 401
     # Route configuration

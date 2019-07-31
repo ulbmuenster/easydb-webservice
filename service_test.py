@@ -8,9 +8,9 @@ easydb_info = ''
 def pre_update_function(easydb_context, easydb_info):
     data = easydb_context['data']
     url = "http://localhost:5000/generate"
-    jsonwebtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0ODcwOTQsIm5iZiI6MTU2NDQ4NzA5NCwianRpIjoiNDVjYzQ2Y2MtMzJiZC00MmFkLWFlNzAtNTQxY2Y5OTNhZGQ3IiwiZXhwIjoxNTY0NDg3OTk0LCJpZGVudGl0eSI6ImVhc3lkYjUiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.9kjb8nC49QIquHt9ENbeGV1xdmomfe6ZbGqMft39-pQ"
+    jsonwebtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ0OTQ3NjUsIm5iZiI6MTU2NDQ5NDc2NSwianRpIjoiNGNlZjM2Y2UtOWVhNC00NTA3LWI3N2UtNTIzZTZmM2FhZDU3IiwiZXhwIjoxNTY0NDk1NjY1LCJpZGVudGl0eSI6ImVhc3lkYjUiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.L2CnQpwn5Gp-TGIhXDZTLBXOrvL8Clnq1_Sai1zpcds"
     try:
-        result = requests.get(url = url, headers={'Authorization': 'Bearer '+jsonwebtoken})
+        result = requests.post(url = url, headers={'Authorization': 'Bearer '+jsonwebtoken}, json={"institution": "ULB","prefix": "ulb"})
         json_data = result.json()
         if "id" in json_data:
             data['invnr'] = json_data["id"]
