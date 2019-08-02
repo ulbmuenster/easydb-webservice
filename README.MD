@@ -1,0 +1,26 @@
+#Setup flask server
+1. mkdir flask
+2. cd flask
+3. python -m venv venv
+4. . venv/bin/activate
+5. pip install -r requirements.txt
+
+#Requirements for the service to work
+1. cd inventarnummer_service
+2. mkdir instance
+3. touch config.py
+4. In config.py define the database connection string, example:  
+```
+file = open("path/to/secret/password", "r")
+password = file.read()
+file.close()
+SQLALCHEMY_DATABASE_URI = 'driver://username:'+password+'@URL:PORT/database_name'
+```
+
+# Start service
+1. cd flask
+2. . venv/bin/activate
+3. cd inventarnummer_service
+4. Optional: export FLASK_ENV=development for debug purposes
+5. export FLASK_APP=run.py
+6. flask run

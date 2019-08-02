@@ -1,7 +1,7 @@
 from flask_jwt_extended import jwt_required
 from .InventarnummerModel import db, Inventarnummer
 from flask_restful import Resource
-from flask import Response, request, jsonify, current_app
+from flask import Response, request, current_app
 import json
 
 
