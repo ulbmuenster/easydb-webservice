@@ -29,3 +29,12 @@ SQLALCHEMY_DATABASE_URI = 'driver://username:'+password+'@url:port/database_name
 The format of the generated ID can be set via a config file in the cfg folder:
 `GENERATED_ID_FORMAT = "PREFIX_INSTITUTION_ID"`.
 The placeholders will be replaced with the corresponding values.
+
+# Sending a request
+The request has to be send with a valid JSONWebtoken and a json body looking like this:
+```
+{
+	"institution": "ABC",
+	"prefix": "cde"
+}
+```
