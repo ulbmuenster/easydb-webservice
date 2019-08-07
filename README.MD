@@ -38,3 +38,5 @@ The request has to be send with a valid JSONWebtoken and a json body looking lik
 	"prefix": "cde"
 }
 ```
+If you dont want to or cannot generate a Webtoken on your own, call inventarnr.uni-muenster.de/TokenGenerator
+and it will return a valid JSONWebToken

@@ -7,8 +7,8 @@ easydb_info = ''
 # Test-Funktion
 def pre_update_function(easydb_context, easydb_info):
     data = easydb_context['data']
-    url = "http://localhost:5000/generate"
-    jsonwebtoken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjQ2NTU1NjQsIm5iZiI6MTU2NDY1NTU2NCwianRpIjoiOWU3ZjdiZWYtNTBjYy00ZjFhLThkNDgtZTRkNjZlNjc3ZmZjIiwiZXhwIjoxNTY0NjU2NDY0LCJpZGVudGl0eSI6ImVhc3lkYjUiLCJmcmVzaCI6ZmFsc2UsInR5cGUiOiJhY2Nlc3MifQ.R3dVowUkwqK7nAkyk2BeWmLlJ8bzggWovViqRJlt_v4"
+    url = "http://inventarnr.uni-muenster.de/generate"
+    jsonwebtoken = "Token hier einfügen."
     try:
         result = requests.post(url = url, headers={'Authorization': 'Bearer '+jsonwebtoken}, json={"institution": "ABC","prefix": "cfg"})
         json_data = result.json()
