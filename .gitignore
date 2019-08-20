@@ -5,3 +5,4 @@ venv
 rdm.log
 secret/
 instance/
+service_test.py
