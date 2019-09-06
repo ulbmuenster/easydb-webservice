@@ -40,3 +40,7 @@ The request has to be send with a valid JSONWebtoken and a json body looking lik
 ```
 If you dont want to or cannot generate a Webtoken on your own, call inventarnr.uni-muenster.de/TokenGenerator
 and it will return a valid JSONWebToken
+
+# *NEW!* Institutions
+The service will only work if the abbreviation or the full name of the insitution exists in the database.
+Otherwise the service will return "Institution does not exist.".
