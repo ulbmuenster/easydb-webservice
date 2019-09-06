@@ -2,6 +2,7 @@ from src import TokenGenerator, IDGenerator
 from flask import Flask, jsonify
 from flask_restful import Resource, Api
 from flask_jwt_extended import JWTManager
+# Put app creation in a function so you can create multiple instances.
 
 
 def create_app():
