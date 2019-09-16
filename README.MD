@@ -39,7 +39,7 @@ The request has to be send to yourURL/generate with a valid JSONWebtoken and a j
 }
 ```
 
-#Institutions
+# Institutions
 The service will only work if the abbreviation or the full name of the insitution exists in the database.
 Otherwise the service will return "Institution does not exist.".
 
