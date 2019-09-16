@@ -39,12 +39,10 @@ class IDGenerator(Resource):
 				if last_inv_id:
 					if last_inv_id.id < max_number:
 						generated_invnr = Inventarnummer(id=last_inv_id.id+1, institution_id=inst_id, prefix=post_prefix)
-						pass
 					else:
 						raise Exception("Could generate id, number range is full.")
 				else:
 					generated_invnr = Inventarnummer(id=min_number, institution_id=inst_id, prefix=post_prefix)
-					pass
 				db.session.add(generated_invnr)
 				db.session.commit()
 

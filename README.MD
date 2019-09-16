@@ -31,16 +31,30 @@ The format of the generated ID can be set via a config file in the cfg folder:
 The placeholders will be replaced with the corresponding values.
 
 # Sending a request
-The request has to be send with a valid JSONWebtoken and a json body looking like this:
+The request has to be send to yourURL/generate with a valid JSONWebtoken and a json body looking like this:
 ```
 {
 	"institution": "ABC",
 	"prefix": "cde"
 }
 ```
-If you dont want to or cannot generate a Webtoken on your own, call inventarnr.uni-muenster.de/TokenGenerator
-and it will return a valid JSONWebToken
 
-# *NEW!* Institutions
+#Institutions
 The service will only work if the abbreviation or the full name of the insitution exists in the database.
 Otherwise the service will return "Institution does not exist.".
+
+# *!NEW!* Formula converter
+This service is also now able to convert chemical formulas of a format like `Ca6(Fe,Al)2(SO4)2(B(OH)4)(OH)12*26H2O`
+to something like `Ca₆(Fe,Al)₂(SO₄)₂(B(OH)₄)(OH)₁₂·26H₂O`. To do so, you have to send a post request to yourURL/convert
+looking like this:
+```
+{
+	"formula": "Ca6(Fe,Al)2(SO4)2(B(OH)4)(OH)12*26H2O"
+}
+```
+As an answer you will receive the following JSON:
+ ```
+ {
+ 	"convertedFormula": "Ca₆(Fe,Al)₂(SO₄)₂(B(OH)₄)(OH)₁₂·26H₂O"
+ }
+ ```
