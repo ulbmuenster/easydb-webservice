@@ -32,17 +32,17 @@ class IDGenerator(Resource):
 				max_number = db_institution.max_number
 				invnr_format = db_institution.format
 				last_inv_id = Inventarnummer.query.order_by(Inventarnummer.id.desc()).\
-					filter_by(prefix=post_prefix, institution_id=inst_id).limit(1).first()
+					filter_by(prefix=post_prefix, institution=inst_id).limit(1).first()
 
 				# Check if an id has already been generated and count up from that, otherwise start generating in the
 				# specified number range starting with the minimum that is defined.
 				if last_inv_id:
 					if last_inv_id.id < max_number:
-						generated_invnr = Inventarnummer(id=last_inv_id.id+1, institution_id=inst_id, prefix=post_prefix)
+						generated_invnr = Inventarnummer(id=last_inv_id.id+1, institution=inst_id, prefix=post_prefix)
 					else:
 						raise Exception("Could generate id, number range is full.")
 				else:
-					generated_invnr = Inventarnummer(id=min_number, institution_id=inst_id, prefix=post_prefix)
+					generated_invnr = Inventarnummer(id=min_number, institution=inst_id, prefix=post_prefix)
 				db.session.add(generated_invnr)
 				db.session.commit()
 

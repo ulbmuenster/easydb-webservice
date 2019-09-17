@@ -29,7 +29,7 @@ class FormulaGenerator(Resource):
 					if formula[i].isdigit and not multiplicator:
 						# handle free ions / charge
 						if formula[i] == '+':
-							convertedFormula = formula[:-1]
+							convertedFormula = convertedFormula[:-1]
 							convertedFormula = convertedFormula + formula[i-1].translate(SUP)
 							convertedFormula = convertedFormula + "⁺"
 						# handle number of atoms

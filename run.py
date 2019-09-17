@@ -37,6 +37,6 @@ def create_app():
 	# Tells flask_restful which script/class belongs to which request/URL
 	api.add_resource(TokenGenerator.TokenGenerator, "/tokengenerator")
 	api.add_resource(IDGenerator.IDGenerator, "/generate")
-	api.add_resource(FormulaConverter.FormulaGenerator, "/convert");
+	api.add_resource(FormulaConverter.FormulaGenerator, "/convert")
 
 	return app
