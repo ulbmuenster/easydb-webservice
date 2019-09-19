@@ -7,9 +7,9 @@ db = SQLAlchemy()
 class Inventarnummer(db.Model):
 
 	id = db.Column(db.Integer, primary_key=True)
-	institution_id = db.Column(db.Integer, db.ForeignKey('institution.id'), nullable=False)
+	institution = db.Column(db.Integer, db.ForeignKey('institution.id'), nullable=False)
 	prefix = db.Column(db.String, nullable=False)
-	institution = db.relationship('Institution', backref=db.backref('inventarnummer', lazy=True))
+	institution_fk = db.relationship('Institution', backref=db.backref('inventarnummer', lazy=True))
 
 	def __repr__(self):
 		return "<Inventarnummer (id='%d', institution='%d')>" % self.id, self.institution
