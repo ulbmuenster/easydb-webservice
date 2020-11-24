@@ -6,7 +6,7 @@
 5. pip install -r requirements.txt
 
 # Requirements for the service to work
-1. cd inventarnummer_service
+1. cd easydb-webservice
 2. mkdir instance
 3. touch config.py
 4. In config.py define the database connection string, example:  
