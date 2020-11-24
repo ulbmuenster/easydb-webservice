@@ -6,7 +6,7 @@
 5. pip install -r requirements.txt
 
 # !CURRENTLY NOT NEEDED!
-(# Requirements for the service to work
+# Requirements for the service to work
 1. cd easydb-webservice
 2. mkdir instance
 3. touch config.py
@@ -17,7 +17,6 @@ password = file.read()
 file.close()
 SQLALCHEMY_DATABASE_URI = 'driver://username:'+password+'@url:port/database_name'
 ```
-)
 
 # Start service
 1. cd flask
