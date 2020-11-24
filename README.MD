@@ -20,7 +20,7 @@ SQLALCHEMY_DATABASE_URI = 'driver://username:'+password+'@url:port/database_name
 # Start service
 1. cd flask
 2. . venv/bin/activate
-3. cd inventarnummer_service
+3. cd easydb-webservice
 4. Optional: export FLASK_ENV=development for debug purposes
 5. export FLASK_APP=run.py
 6. flask run
